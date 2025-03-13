@@ -1,7 +1,14 @@
 const container = document.querySelector("#container");
 
-for (i = 0; i < 32; i++) {
+for (i = 0; i < 256; i++) {
     const div = document.createElement("div");
-    div.setAttribute("style", "border: solid; padding: 10px;");
+    div.setAttribute("id", "grid");
     container.appendChild(div);
 }
+
+container.addEventListener("mouseover", (e) => {
+    let target = e.target;
+    target.style.background = "blue";
+
+})
+
