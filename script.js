@@ -12,3 +12,9 @@ container.addEventListener("mouseover", (e) => {
 
 })
 
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+    let squares = prompt("Enter number of squares per side for new grid");
+})
+
