@@ -9,12 +9,19 @@ function createGrid (squares) {
     }    
 }
 
-createGrid(16);
+createGrid(16); // Initalize default grid as 16x16
+
+function colorGen() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
 
 container.addEventListener("mouseover", (e) => { // Event listener on the whole container, rather than creating one for each div
     let target = e.target;
     if (target.id === "grid") { // Ensuring that the color only changes on grid elements
-        target.style.background = "blue";
+        target.style.background = colorGen();
     }
 })
 
@@ -29,5 +36,6 @@ btn.addEventListener("click", () => {
         createGrid(squares);
     } 
 })
+
 
 
