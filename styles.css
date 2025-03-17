@@ -14,10 +14,10 @@ body {
 
 #grid {
     border: solid;
-    width: 55px;
-    height: 55px;
+    /* width: 55px; */
+    height: auto;
     box-sizing: border-box;
     display: flex;
-    flex: 0 0 55px;
+    /* flex: 0 0 55px; */
 }
 
