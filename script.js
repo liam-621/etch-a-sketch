@@ -1,15 +1,19 @@
 const container = document.querySelector("#container");
 
-for (i = 0; i < 256; i++) {
-    const div = document.createElement("div");
-    div.setAttribute("id", "grid");
-    div.style.width = "55px";
-    container.appendChild(div);
+function createGrid (squares) {
+    for (i = 0; i < squares * squares; i++) {
+        const div = document.createElement("div");
+        div.setAttribute("id", "grid");
+        div.style.width = `${880 / squares}px`;
+        container.appendChild(div);
+    }    
 }
 
-container.addEventListener("mouseover", (e) => {
+createGrid(16);
+
+container.addEventListener("mouseover", (e) => { // Event listener on the whole container, rather than creating one for each div
     let target = e.target;
-    if (target.id === "grid") {
+    if (target.id === "grid") { // Ensuring that the color only changes on grid elements
         target.style.background = "blue";
     }
 })
@@ -22,12 +26,7 @@ btn.addEventListener("click", () => {
         alert("Please enter a value less than 100.");
     } else {
         container.innerHTML = ""; // Clear the grid
-        for (i = 0; i < squares * squares; i++) {
-            const div = document.createElement("div");
-            div.setAttribute("id", "grid");
-            div.style.width = `${880 / squares}px`;
-            container.appendChild(div);
-        }
+        createGrid(squares);
     } 
 })
 
